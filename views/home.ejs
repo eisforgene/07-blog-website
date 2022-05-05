@@ -1,0 +1,29 @@
+<%- include('partials/header') -%>
+
+    <ul>
+        <h1>Home</h1>
+        <p> <%= homeContent.substring(0, 100) + "..." %> </p>
+        <% newPosts.forEach(function(post) { %>
+            <h1>
+                <%= post.title %>
+            </h1>
+            <p>
+                <%= post.body.substring(0, 100) + "..." %>
+                <a href="/posts/<%= post.title %>">Read More</a>
+            </p>
+
+            <% }) %>
+
+                <!-- <% for (let i=0; i<newPosts.length; i++) { %>
+            
+            <h1>
+                <%= newPosts[i].title %>
+            </h1>
+
+            <p>
+                <%= newPosts[i].body %>
+            </p>
+
+            <% } %> -->
+    </ul>
+    <%- include('partials/footer.ejs') -%>
